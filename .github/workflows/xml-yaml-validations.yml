@@ -2,7 +2,7 @@ name: XML & YAML Validations
 on: push
 jobs:
 
-    first-job:
+    validations:
         runs-on: ubuntu-latest
     
         steps:
@@ -20,7 +20,7 @@ jobs:
         - name: yaml-lint
           uses: ibiqlik/action-yamllint@v3
           with:
-            file_or_dir: ./myfolder
+            file_or_dir: .
             
             
          
