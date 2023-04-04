@@ -1,0 +1,28 @@
+name: XML & YAML Validations
+on: push
+jobs:
+
+    first-job:
+        runs-on: ubuntu-latest
+    
+        steps:
+        - name: Checkout
+          uses: actions/checkout@master    
+        - name: XML    
+          uses: anyone-developer/anyone-validate-xml@main
+          with:
+            file-extension: '.config,.xml'
+            ignore-files: 'README.md'
+            ignore-directories: '.git'
+            read-path: ./myfolder
+        - name: Checkout-2    
+          uses: actions/checkout@v3
+        - name: yaml-lint
+          uses: ibiqlik/action-yamllint@v3
+          with:
+            file_or_dir: ./myfolder
+            
+            
+         
+          
+        
